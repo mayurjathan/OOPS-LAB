@@ -12,15 +12,40 @@ import java.util.Scanner;
 class calculator {
     public static void main(String[] args) {
         Scanner c = new Scanner(System.in);
-        int n1,n2;
-        char y;
-        System.out.println("Enter first number : ");
-        n1=c.nextInt();
-         System.out.println("Enter second number : ");
-         n2=c.nextInt();
-         System.out.println();
-
-        
-
-    
+        float n1,n2,t;
+        char y,o;
+        while (true) {
+        System.out.print("Enter first number : ");
+        n1=c.nextFloat();
+         System.out.print("Enter second number : ");
+         n2=c.nextFloat();
+         System.out.print("Enter the operator : ");
+         o=c.next().charAt(0);
+         switch(o)
+         {
+            case '+':
+            t=n1+n2;
+            System.out.println("Answer  = "+t);
+            break;
+            case '-':
+            t=n1-n2;
+            System.out.println("Answer = "+t);
+            break;
+            case '*':
+            t=n1*n2;
+            System.out.println("Answer = "+t);
+            break;
+            case '/':
+            t=n1/n2;
+            System.out.println("Answer = "+t);
+            break;
+            default:
+            System.out.println("ERROR");
+            break;
+         }
+         System.out.println("Do another (y/n)?");
+         y= c.next().charAt(0);
+        if(y == 'n' || y == 'N') break;
+        }
+    } 
 }
