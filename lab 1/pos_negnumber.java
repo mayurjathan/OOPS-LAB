@@ -19,8 +19,8 @@ class pos_negnumber {
             else 
             p=p+1;
         }
-        System.out.println("positive number "+p);
-        System.out.println("negative number "+n);
-        System.out.println("zero "+z);
+        System.out.println("positive number : "+p);
+        System.out.println("negative number : "+n);
+        System.out.println("zero : "+z);
     }
 }
