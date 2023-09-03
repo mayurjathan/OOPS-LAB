@@ -1,18 +1,17 @@
-
-/*Write a Java program to display non diagonal elements and find their sum. [Hint: Non
-Principal diagonal: The diagonal of a diagonal matrix from the top right to the bottom left
-corner is called non principal diagonal. */
+/*Write a Java program to display principal diagonal elements and find their sum. 
+[Hint: Principal Diagonal: The principal diagonal of a rectangular matrix is the diagonal which runs 
+from the top left corner and steps down and right, until the right edge or the bottom edge is reached]. */
 import java.util.Scanner;
 
 public class DiagonalSum {
     public static void main(String[] args) {
         int dim;
 
-        System.out.println("Enter the size");
+        System.out.print("Enter the size :");
         Scanner sc = new Scanner(System.in);
         dim = sc.nextInt();
 
-        System.out.println("Enter values");
+        System.out.print("Enter values : ");
         int arr[][] = new int[dim][dim];
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {

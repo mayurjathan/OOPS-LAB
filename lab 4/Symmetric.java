@@ -1,15 +1,15 @@
-
+/*Find whether a given matrix is symmetric or not. [Hint: A = AT]*/
 import java.util.Scanner;
 
 class Symmetric {
     public static void main(String[] args) {
         int dim;
 
-        System.out.println("Enter the size");
+        System.out.print("Enter the size : ");
         Scanner sc = new Scanner(System.in);
         dim = sc.nextInt();
 
-        System.out.println("Enter values");
+        System.out.print("Enter values : ");
         int arr[][] = new int[dim][dim];
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {

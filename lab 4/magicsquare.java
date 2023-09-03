@@ -1,3 +1,7 @@
+/*Write a Java program to find whether the matrix is a magic square or not. [Hint: Compare
+the sum for every row, the sum with every column, the sum of the principal diagonal and the
+sum of the non-principal diagonal elements. If they are all same, then the matrix is a magic
+square matrix].*/
 import java.util.Scanner;
 
 class magicsquare {
@@ -38,6 +42,6 @@ class magicsquare {
         if (!flag)
             System.out.println("Given matrix is a Magic Square");
         else
-            System.out.println("Given matrix is a not a magic" + " Square");
+            System.out.println("Given matrix is a not a Magic Square");
     }
 }
