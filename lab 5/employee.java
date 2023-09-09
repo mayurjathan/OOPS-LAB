@@ -1,53 +1,46 @@
+
+/*Define a class Employee with data members: employee name, city, basic salary,
+dearness allowance (DA%) and house rent (HRA%). Define getdata(), calculate(),
+and display() functions. Calculate method should find the total salary and display
+method should display it.
+Total = basic+basic*da/100+basic*hra/100; */
 import java.util.Scanner;
 
-class Employee {
-    String name;
-    String city;
+class employee {
+    private String name;
+    private String city;
+    private double basic;
+    private double DA;
+    private double HRA;
 
-    float basicSalary;
-    float houseRent;
-    float da;
-    float hra;
-
-    private float totalSalary;
-
-    void getData()
-    {
+    public void getdata() {
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter employee name:");
+        System.out.println("Enter name: ");
         name = sc.nextLine();
-        System.out.println("Enter employee city:");
+        System.out.println("Enter City: ");
         city = sc.nextLine();
-
-        System.out.println("Enter basic Salary:");
-        basicSalary = sc.nextFloat();
-        System.out.println("Enter house rent:");
-        houseRent = sc.nextFloat();
-        System.out.println("Enter dearness allowance:");
-        da = sc.nextFloat();
-        System.out.println("Enter HRA:");
-        hra = sc.nextFloat();
-        sc.close();
+        System.out.println("Enter Basic Salary: ");
+        basic = sc.nextDouble();
+        System.out.println("Enter Dearness Allowance (DA%): ");
+        DA = sc.nextDouble();
+        System.out.println("Enter House Rent Allowance (HRA%): ");
+        HRA = sc.nextDouble();
     }
 
-    float calculate()
-    {
-        totalSalary = (basicSalary + basicSalary * da/100 + basicSalary * hra/100 );
-        return totalSalary;
+    public double calculate() {
+        double Total = basic + basic * DA / 100 + basic * HRA / 100;
+        return Total;
     }
 
-    void display()
-    {
-        System.out.println("Total salary: " + calculate());
+    public void display() {
+        System.out.println("Total Salary : " + calculate());
     }
 }
 
-class Company
-{
+class EmployeeDemo {
     public static void main(String[] args) {
-        Employee emp = new Employee();
-        emp.getData();
-        emp.display();
+        employee em = new employee();
+        em.getdata();
+        em.display();
     }
 }
