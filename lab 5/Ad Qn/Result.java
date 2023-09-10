@@ -17,47 +17,84 @@ secured it.
 d. To find the student who obtained the highest total mark */
 import java.util.Scanner;
 
-public class Result {
-    public static void main(String[] args) {
-        int roll[] = new int[100];
-        int sub[][] = new int[5][5];
-        int sum[] = new int[5];
-        int hig[] = new int[5];
-        int mark[] = new int[5];
-        int i, j, c = 0, temp;
-        Scanner sc = new Scanner(System.in);
-        for (i = 1; i <= 3; i++) {
-            System.out.print("Enter the student " + i + " roll no :");
-            roll[i] = sc.nextInt();
-        }
-        for (i = 1; i <= 3; i++) {
-            for (j = 1; j <= 3; j++) {
-                System.out.print("Enter the student " + i + " subject " + j + " marks : ");
-                sub[i][j] = sc.nextInt();
-                sum[i] += sub[i][j];
-            }
-        }
-        for (i = 1; i <= 3; i++) {
-            temp = 0;
-            for (j = 1; j <= 3; j++) {
-                if (sub[i][j] > temp) {
-                    temp = sub[i][j];
-                    hig[i] = j;
-                    mark[i] = sub[i][j];
-                }
-            }
+class Result {
+    private int[] roll;
+    private int[][] sub;
+    private int[] sum;
+    private int[] hig;
+    private int[] mark;
+    private int topStudent;
 
-        }
-        temp = 0;
-        for (i = 1; i <= 3; i++) {
-            if (sum[i] > temp) {
-                temp = sum[i];
-                c = i;
-            }
-            System.out.println(
-                    "The student " + i + " with roll no " + roll[hig[i]] + " has " + mark[i] + " in subject " + i);
-        }
-        System.out.println("The student with highest total sum is student " + c + " with " + temp + " marks");
+    public Result() {
+        roll = new int[4]; // Increased the size to 4 to match the index range.
+        sub = new int[4][4]; // Increased the size to 4x4 to match the index range.
+        sum = new int[4];
+        hig = new int[4];
+        mark = new int[4];
+        topStudent = 0;
     }
 
+    public void inputStudentData() {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 1; i <= 3; i++) {
+            System.out.print("Enter the student " + i + " roll no: ");
+            roll[i] = sc.nextInt();
+            for (int j = 1; j <= 3; j++) {
+                System.out.print("Enter the student " + i + " subject " + j + " marks: ");
+                sub[i][j] = sc.nextInt();
+                sum[i] += sub[i][j];
+
+                if (sub[i][j] > mark[i]) {
+                    mark[i] = sub[i][j];
+                    hig[i] = j;
+                }
+            }
+        }
+    }
+
+    public void findStudentWithHighestTotal() {
+        int temp = 0;
+        for (int i = 1; i <= 3; i++) {
+            if (sum[i] > temp) {
+                temp = sum[i];
+                topStudent = i;
+            }
+        }
+    }
+
+    public void displayResults() {
+        // Display total marks for each student
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Student " + roll[i] + " - Total Marks: " + sum[i]);
+        }
+    
+        // Display highest marks in each subject
+        for (int j = 1; j <= 3; j++) {
+            int highestSubjectMark = 0;
+            int studentWithHighestSubjectMark = 0;
+    
+            for (int i = 1; i <= 3; i++) {
+                if (sub[i][j] > highestSubjectMark) {
+                    highestSubjectMark = sub[i][j];
+                    studentWithHighestSubjectMark = i;
+                }
+            }
+    
+            System.out.println("Highest marks in Subject " + j + " - Student " + roll[studentWithHighestSubjectMark] +
+                    " (Marks: " + highestSubjectMark + ")");
+        }
+    
+        // Display the student with the highest total marks
+        System.out.println("The student with the highest total marks - Student " + roll[topStudent] +
+                " (Total Marks: " + sum[topStudent] + ")");
+    }
+    
+
+    public static void main(String[] args) {
+        Result result = new Result();
+        result.inputStudentData();
+        result.findStudentWithHighestTotal();
+        result.displayResults();
+    }
 }
+

@@ -5,8 +5,7 @@
        System.out.println("Before swapping, a = " + a.a + " and b = " + b.a);
        // Invoke the swap method
        swapFunction(a, b);
-       System.out.println("
- **Now, Before and After swapping values will be different here**:");
+       System.out.println("**Now, Before and After swapping values will be different here**:");
        System.out.println("After swapping, a = " + a.a + " and b is " + b.a);
     }
 
