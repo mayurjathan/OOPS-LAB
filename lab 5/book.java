@@ -46,8 +46,7 @@ class Book {
     }
 
 }
-
-public class BookDemo {
+ class BookDemo {
     public static void main(String[] args) {
         var scan = new Scanner(System.in);
         Book[] books = new Book[6];

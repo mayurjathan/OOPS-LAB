@@ -4,11 +4,10 @@ type. Include the following methods (include respective constructors) isZero( ),
 isPositive(), isNegative( ), isOdd( ), isEven( ), isPrime(), isArmstrong(). The above
 methods return boolean primitive type. */
 import java.util.Scanner;
-
-public class NumberDemo {
+class NumberDemo {
     public static void main(String[] args) {
         System.out.print("Enter a number: ");
-        var scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         Number n = new Number(scan.nextDouble());
         System.out.println("isZero = " + n.isZero());
         System.out.println("isPositive = " + n.isPositive());

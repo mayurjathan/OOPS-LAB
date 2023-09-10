@@ -1,4 +1,4 @@
-public class JavaTester {
+ class JavaTester {
     public static void main(String[] args) {
        IntWrapper a = new IntWrapper(30);
        IntWrapper b = new IntWrapper(45);
