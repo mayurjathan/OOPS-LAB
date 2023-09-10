@@ -38,8 +38,8 @@ class time {
 class TimeDemo {
     public static void main(String[] args) {
         time t1 = new time();
-        time t2 = new time(4, 02, 16);
-        time t3 = new time(12, 15, 49);
+        time t2 = new time(3, 13,55);
+        time t3 = new time(6, 10, 25);
         t1.display();
         t2.display();
         t3.display();

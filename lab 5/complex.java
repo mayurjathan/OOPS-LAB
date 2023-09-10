@@ -34,9 +34,9 @@ class complex {
 
 class ComplexDemo {
     public static void main(String[] args) {
-        complex c1 = new complex(5, 10);
-        complex c2 = new complex(11, 22);
-        int i = 10;
+        complex c1 = new complex(2, 11);
+        complex c2 = new complex(5, 7);
+        int i = 3;
         c1.display(c1.add(i, c1));
         c1.display(c1.add(c1, c2));
     }
