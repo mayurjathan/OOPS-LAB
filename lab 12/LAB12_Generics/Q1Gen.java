@@ -1,4 +1,4 @@
-package LAB12_Generics;
+
 import java.util.*;
 
 class Main {

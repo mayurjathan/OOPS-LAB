@@ -29,8 +29,7 @@ class MyThread extends Thread {
         sharedResource.increment();
     }
 }
-
-class SynchronizationExample {
+ class SynchronizationExample {
     public static void main(String[] args) {
         SharedResource sharedResource = new SharedResource();
 
