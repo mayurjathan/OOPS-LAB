@@ -1,3 +1,4 @@
+//Write a program to set priority and check for an InterruptedException.
 class MyThread implements Runnable {
     @Override
     public void run() {
@@ -30,6 +31,7 @@ class Main {
             // Wait for threads to finish
             thread1.join();
             thread2.join();
+            
         } catch (InterruptedException e) {
             System.out.println("Main thread was interrupted.");
         }

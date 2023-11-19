@@ -7,17 +7,17 @@ class Matrix implements Runnable {
     }
 
     public void run() {
-        Thread currentThread = Thread.currentThread();
+        Thread current = Thread.currentThread();
 
-        if (currentThread.getName().equals("DisplayThread")) {
+        if (current.getName().equals("DisplayThread")) {
             displayMatrix();
-        } else if (currentThread.getName().equals("TransposeThread")) {
+        } else if (current.getName().equals("TransposeThread")) {
             displayTranspose();
-        } else if (currentThread.getName().equals("MaxValueThread")) {
+        } else if (current.getName().equals("MaxValueThread")) {
             displayMaxValue();
-        } else if (currentThread.getName().equals("PrincipalDiagonalThread")) {
+        } else if (current.getName().equals("PrincipalDiagonalThread")) {
             displayPrincipalDiagonal();
-        } else if (currentThread.getName().equals("NonDiagonalThread")) {
+        } else if (current.getName().equals("NonDiagonalThread")) {
             displayNonDiagonal();
         }
         try{

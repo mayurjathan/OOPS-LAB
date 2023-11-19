@@ -1,3 +1,5 @@
+//Write a program to synchronize two different threads
+// a. Using synchronized method.
 class SharedResource {
     synchronized void printNumbers(int n) {
         for (int i = 1; i <= n; i++) {
@@ -26,7 +28,7 @@ class MyThread implements Runnable {
     }
 }
 
-public class Main {
+ class Main {
     public static void main(String[] args) {
         SharedResource sharedResource = new SharedResource();
 

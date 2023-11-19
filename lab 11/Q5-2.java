@@ -2,7 +2,8 @@ class SharedResource {
     private int counter = 0;
 
     // Synchronized method to increment the counter
-    public synchronized void increment() {
+    public void increment() {
+        synchronized(this){
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName() + " - Incrementing: " + (++counter));
             try {
@@ -11,6 +12,7 @@ class SharedResource {
                 e.printStackTrace();
             }
         }
+    }
     }
 }
 
@@ -28,7 +30,7 @@ class MyThread extends Thread {
     }
 }
 
-public class SynchronizationExample {
+class SynchronizationExample {
     public static void main(String[] args) {
         SharedResource sharedResource = new SharedResource();
 
