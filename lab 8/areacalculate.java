@@ -2,8 +2,6 @@
 //Write a program to compute the areas of a rectangle and a circle by using abstract class.
 import java.util.*;
 
-import javafx.scene.shape.Circle;
-
 abstract class shape {
     public abstract double computearea();
 }

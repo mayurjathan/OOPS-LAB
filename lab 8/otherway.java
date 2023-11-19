@@ -2,17 +2,15 @@
 //Write a program to compute the areas of a rectangle and a circle by using interface.
 import java.util.*;
 
-import javafx.scene.shape.Circle;
-
-interface shape {
+interface shap {
     public abstract double computearea();
 }
 
-class Rectangle implements shape {
+class rectangle implements shap{
     private double length;
     private double width;
 
-    Rectangle(double length, double width) {
+    rectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
@@ -22,10 +20,10 @@ class Rectangle implements shape {
     }
 }
 
-class circle implements shape {
+class Circle implements shap {
     private double radius;
 
-    circle(double radius) {
+    Circle(double radius) {
         this.radius = radius;
     }
 
@@ -47,8 +45,8 @@ class otherway {
 
         System.out.print("Enter the radius of the circle: ");
         double Radius = scanner.nextDouble();
-        Rectangle rec = new Rectangle(Length, Width);
-        circle cir = new circle(Radius);
+        rectangle rec = new rectangle(Length, Width);
+        Circle cir = new Circle(Radius);
         double rectarea = rec.computearea();
         double cirarea = cir.computearea();
         System.out.println("Area of Rectangle is " + rectarea);

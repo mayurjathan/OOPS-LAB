@@ -11,7 +11,10 @@ class q4{
         var scan = new Scanner(System.in);
         try{
             String s = scan.nextLine();
-            throw new ErrorException(s);
+            if (s.isEmpty()) {
+                throw new ErrorException("Input string cannot be empty");
+            }
+            System.out.println("Entered String : "+s);
         }
         catch(ErrorException e){
             System.out.println(e);

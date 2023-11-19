@@ -27,12 +27,16 @@ class count {
 
     public static int countLines(String input) {
         //String[] lines = input.split("\n");
+        int count=1;
         for(int i=0;i<input.length();i++)
         {
-            if(input[i]=='\\'&&input[i+1]=='n')
+            if(input.charAt(i)=='\\' && input.charAt(i+1)=='n')
+            {
+                count++;
+            }
 
         }
-        return lines.length;
+        return count;
 
     }
 

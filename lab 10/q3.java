@@ -1,3 +1,5 @@
+// Write a program to enter student’s Name, Roll Number and Marks in three
+// subjects and find the percentage, grade and handle NumberFormatException.
 import java.util.Scanner;
 class q3{
     public static void main(String[] args) {
